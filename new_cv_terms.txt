@@ -1,0 +1,300 @@
+[Term]
+id: MS:XXXXX0
+name: complex modification
+def: "Declares a modification to be a complex structure or unordered molecular composition." [PSI:PI]
+is_a: MS:1001471 ! peptide modification details
+
+
+[Term]
+id: MS:XXXXX1
+name: glycosylation modification
+def: "Declares a modification to be a glycan or glycan aggregate." [PSI:PI]
+is_a: MS:XXXXX0 ! complex modification
+
+
+[Term]
+id: MS:XXXXX2
+name: monosaccharide count
+def: "A single type of known monosaccharide or substituent with an associated quantity present in a glycan composition." [PSI:PI]
+is_a: MS:1001471 ! peptide modification details
+has_regexp: MS:XXXX99 ! (Hex|HexNAc|dHex|Fuc|NeuAc|NeuGc|Pen|S|P):(\d+)
+
+
+[Term]
+id: MS:XXXXX3
+name: unknown monosaccharide count
+def: "A single type of unknown or user-defined monosaccharide or substituent with an associated unit mass and quantity present in a glycan composition." [PSI:PI]
+is_a: MS:1001471 ! peptide modification details
+has_regexp: MS:XXX100 ! ([^:]):(\d+(.\d+?)?):(\d+)
+
+
+[Term]
+id: MS:XXXXX4
+name: glycan class
+def: "The type of glycosylation event that the identification process assumed." [PSI:PI]
+is_a: MS:1001471 ! peptide modification details
+
+
+[Term]
+id: MS:XXXXX5
+name: N-glycan
+def: "A glycan that is co-translationally attached to an asparagine amine, usually at a canonical motif N[^P][ST]." [PSI:PI]
+is_a: MS:XXXXX4 ! glycan class
+
+
+[Term]
+id: MS:XXXXX6
+name: O-glycan
+def: "A glycan that is co-translationally attached to a hydroxyl group, usually on a serine or threonine." [PSI:PI]
+is_a: MS:XXXXX4 ! glycan class
+
+
+[Term]
+id: MS:XXXX16
+name: O-GalNAc O-glycan
+def: "An O-linked glycan initiated by the addition of a GalNAc residue, usually the basis for mucin-type O-glycans." [PSI:PI]
+is_a: MS:XXXXX6 ! O-glycan
+
+
+[Term]
+id: MS:XXXXX7
+name: glycosaminoglycan
+def: "A glycan that is co-translationally attached to a serine or occaisionally other amino acid hydroxyl group usually at a canonical motif S[AG]X[AG]." [PSI:PI]
+is_a: MS:XXXXX4 ! glycan class
+
+
+[Term]
+id: MS:XXXX11
+name: other glycan class
+def: "A glycan class not covered by any other terms." [PSI:PI]
+is_a: MS:XXXXX4 ! glycan class
+
+
+[Term]
+id: MS:XXXX12
+name: glycan interpretation
+def: "How the glycan molecule was interpreted by the identification software." [PSI:PI]
+is_a: MS:1001471 ! peptide modification details
+
+
+[Term]
+id: MS:XXXX13
+name: glycan topology
+def: "The glycan was interpreted to have a defined topology with or without defined linkage." [PSI:PI]
+is_a: MS:XXXX12 ! glycan interpretation
+
+
+[Term]
+id: MS:XXXX14
+name: glycan composition
+def: "The glycan was interpreted without taking into account monosaccharide connectivity." [PSI:PI]
+is_a: MS:XXXX12 ! glycan interpretation
+
+
+[Term]
+id: MS:XXXX15
+name: glycan aggregate
+def: "In addition to being treated as a composition, this glycan is an aggregate across multiple glycosylation sites." [PSI:PI]
+is_a: MS:XXXX12 ! glycan composition
+
+[Term]
+id: MS:XXXX16
+name: glycosylated ion series
+def: "Denotes a glycopeptide ion series including a combination of peptide and glycan reaction products" [PSI:PI]
+is_a: MS:1002473 ! ion series considered in search
+
+[Term]
+id: MS:XXXX17
+name: param: peptide + glycan Y ion
+def: "Parameter information, type of product: intact peptide with reducing end glycan Y fragment attached"  [PSI:PI]
+is_a: MS:XXXX16 ! glycosylated ion series
+
+[Term]
+id: MS:XXXX18
+name: param: peptide b + glycan Y ion
+def: "Parameter information, type of product: peptide b fragment with reducing end glycan Y fragment attached"  [PSI:PI]
+is_a: MS:XXXX16 ! glycosylated ion series
+
+[Term]
+id: MS:XXXX19
+name: param: peptide y + glycan Y ion
+def: "Parameter information, type of product: peptide y fragment with reducing end glycan Y fragment attached"  [PSI:PI]
+is_a: MS:XXXX16 ! glycosylated ion series
+
+[Term]
+id: MS:XXXX20
+name: param: peptide c + glycan Y ion
+def: "Parameter information, type of product: peptide c fragment with reducing end glycan Y fragment attached"  [PSI:PI]
+is_a: MS:XXXX16 ! glycosylated ion series
+
+[Term]
+id: MS:XXXX21
+name: param: peptide z + glycan Y ion
+def: "Parameter information, type of product: peptide z fragment with reducing end glycan Y fragment attached"  [PSI:PI]
+is_a: MS:XXXX16 ! glycosylated ion series
+
+
+[Term]
+id: MS:XXXX22
+name: param: oxonium ion
+def: "Parameter information, type of product: glycan oxonium ion"  [PSI:PI]
+is_a: MS:XXXX16 ! glycosylated ion series
+
+
+[Term]
+id: MS:XXXX98
+name: glycopeptide search
+def: "glycopeptide search performed." [PSI:PI]
+is_a: MS:1002489 ! special processing
+
+[Term]
+id: MS:XXXX99
+name: (Hex|HexNAc|dHex|Fuc|NeuAc|NeuGc|Pen|S|P):(\d+)
+def: "The pattern for a known monosaccharide with an associated count present in the glycan composition." [PSI:PI]
+relationship: part_of MS:1001471 ! peptide modification details
+is_a: MS:1002479 ! regular expression
+
+
+[Term]
+id: MS:XXX100
+name: ([^:]):(\d+(.\d+?)?):(\d+)
+def: "A single type of unknown monosaccharide or substituent with an associated quantity present in a glycan composition." [PSI:PI]
+relationship: part_of MS:1001471 ! peptide modification details
+is_a: MS:1002479 ! regular expression
+
+
+[Term]
+name: glycopeptide confidence measure
+id: MS:XXX101
+def: "Parent term glycopeptide scoring values." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001153 ! search engine specific score
+
+
+[Term]
+name: glycopeptide peptide score
+id: MS:XXX102
+def: "glycopeptide scoring value describing the evidence for the peptide sequence." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:XXX101 ! glycopeptide confidence measure
+
+
+[Term]
+name: glycopeptide glycan score
+id: MS:XXX103
+def: "glycopeptide scoring value describing the evidence for the attached glycan or glycans." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:XXX101 ! glycopeptide confidence measure
+
+
+[Term]
+name: glycopeptide score
+id: MS:XXX104
+def: "glycopeptide scoring value describing the evidence for the glycopeptide combining all sources of evidence." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:XXX101 ! glycopeptide confidence measure
+
+
+[Term]
+id: MS:XXX105
+name: glycopeptide false discovery rate dimension control strategy
+def: "Parent term for strategies used to control glycopeptide false discovery rates." [PSI:PI]
+is_a: MS:1002489 ! special processing
+
+
+[Term]
+id: MS:XXX106
+name: peptide glycopeptide false discovery rate control strategy
+def: "The false discovery rate of the peptide sequence of a glycopeptide identification was controlled for." [PSI:PI]
+is_a: MS:XXX105 ! glycopeptide false discovery rate dimension control strategy
+
+
+[Term]
+id: MS:XXX107
+name: glycan glycopeptide false discovery rate control strategy
+def: "The false discovery rate of the glycan structure or composition of a glycopeptide identification was controlled for." [PSI:PI]
+is_a: MS:XXX105 ! glycopeptide false discovery rate dimension control strategy
+
+
+[Term]
+id: MS:XXX108
+name: glycopeptide false discovery rate control strategy
+def: "The false discovery rate of the glycopeptide identification was controlled for." [PSI:PI]
+is_a: MS:XXX105 ! glycopeptide false discovery rate dimension control strategy
+
+
+[Term]
+id: MS:XXX11A
+name: joint glycopeptide false discovery rate control strategy
+def: "The false discovery rate of the glycopeptide identification was controlled for through a combination of separate false discovery rates from multiple statistics." [PSI:PI]
+is_a: MS:XXX105 ! glycopeptide false discovery rate dimension control strategy
+
+
+[Term]
+id: MS:XXX109
+name: glycopeptide attribute
+def: "Glycopeptide attribute." [PSI:PI]
+is_a: MS:1002694 ! single identification result attribute
+
+
+[Term]
+id: MS:XXX110
+name: glycan dissociation mode
+def: "Parent term for describing what kind of dissociation the search engine expected the glycan to undergo for a given spectrum." [PSI:PI]
+is_a: MS:XXX109 ! glycopeptide attribute
+
+
+[Term]
+id: MS:XXX111
+name: glycan dissociating, peptide preserving
+def: "Indicates that the glycan dissociation products were considered, with the peptide mostly intact, as is case with lower energy collisional dissociation methods." [PSI:PI]
+is_a: MS:XXX110 ! glycan dissociation mode
+
+
+[Term]
+id: MS:XXX112
+name: glycan preserving, peptide dissociating
+def: "Indicates that the glycan was assumed to be mostly intact in the generated product ions, as is the case with electron-driven dissociation methods." [PSI:PI]
+is_a: MS:XXX110 ! glycan dissociation mode
+
+
+[Term]
+id: MS:XXX113
+name: glycan dissociating, peptide dissociating
+def: "Indicates that the glycopeptide dissociated along both the peptide and the glycan structures, producing a mixture of product ions, as is commonly the case for combinations of electron-based and collisional dissociation (e.g. EThcD)." [PSI:PI]
+is_a: MS:XXX110 ! glycan dissociation mode
+
+
+[Term]
+id: MS:XXX114
+name: glycan eliminated, peptide dissociating
+def: "Indicates that the glycopeptide dissociated along both the peptide and the glycan structures, almost entirely eliminating the glycan while dissociating the peptide, as is common with higher energy collisional dissociation methods." [PSI:PI]
+is_a: MS:XXX110 ! glycan dissociation mode
+
+
+[Term]
+id: MS:XXX115
+name: glycan-specific statistic
+def: "A statistic for a spectrum match or structure-level identification that describes evidence for the glycan or glycans attached to a glycopeptide."
+is_a: MS:XXX109 ! glycopeptide attribute
+
+
+[Term]
+id: MS:XXX116
+name: peptide-specific statistic
+def: "A statistic for a spectrum match or structure-level identification that describes evidence for the peptide sequence of a glycopeptide."
+is_a: MS:XXX109 ! glycopeptide attribute
+
+
+[Term]
+id: MS:XXX117
+name: glycopeptide statistic
+def: "A statistic for a spectrum match or structure-level identification that describes evidence for a glycopeptide in total, combining peptide and glycan evidence."
+is_a: MS:XXX109 ! glycopeptide attribute
+
+
+[Term]
+id: MS:XXX118
+name: joint glycopeptide statistic
+def: "A statistic for a spectrum match or structure-level identification that describes evidence for a glycopeptide jointly, combining separate statistics from multiple sources of evidence."
+is_a: MS:XXX109 ! glycopeptide attribute

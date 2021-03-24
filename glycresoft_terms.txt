@@ -1,0 +1,86 @@
+[Term]
+name: GlycReSoft:total score
+id: MS:XXX10A
+def: "A spectrum match score from a combination of peptide and glycan evidence" [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! PSM-level search engine specific statistic
+is_a: MS:1001153 ! search engine specific score
+is_a: MS:XXX104  ! glycopeptide score
+relationship: has_order MS:1002108 ! higher score better
+
+
+[Term]
+name: GlycReSoft:glycan score
+id: MS:XXX10B
+def: "A spectrum match score from glycan evidence" [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! PSM-level search engine specific statistic
+is_a: MS:1001153 ! search engine specific score
+is_a: MS:XXX103  ! glycopeptide glycan score
+relationship: has_order MS:1002108 ! higher score better
+
+
+[Term]
+name: GlycReSoft:peptide score
+id: MS:XXX10C
+def: "A spectrum match score from peptide sequence evidence" [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! PSM-level search engine specific statistic
+is_a: MS:1001153 ! search engine specific score
+is_a: MS:XXX102  ! glycopeptide peptide score
+relationship: has_order MS:1002108 ! higher score better
+
+
+[Term]
+name: GlycReSoft:total q-value
+id: MS:XXX10D
+def: "A q-value statistic calculated from GlycReSoft:total score" [PSI:PI]
+is_a: MS:1002354 ! PSM-level q-value
+is_a: MS:1001143 ! PSM-level search engine specific statistic
+is_a: MS:XXX117  ! glycopeptide statistic
+
+
+[Term]
+name: GlycReSoft:peptide q-value
+id: MS:XXX10E
+def: "A q-value statistic calculated from GlycReSoft:peptide score" [PSI:PI]
+is_a: MS:1002354 ! PSM-level q-value
+is_a: MS:1001143 ! PSM-level search engine specific statistic
+is_a: MS:XXX116  ! peptide-specific statistic
+
+
+[Term]
+name: GlycReSoft:glycan q-value
+id: MS:XXX10F
+def: "A q-value statistic calculated from GlycReSoft:glycan score" [PSI:PI]
+is_a: MS:1002354 ! PSM-level q-value
+is_a: MS:1001143 ! PSM-level search engine specific statistic
+is_a: MS:XXX115  ! glycan-specific statistic
+
+
+[Term]
+name: GlycReSoft:joint q-value
+id: MS:XXX10G
+def: "A q-value statistic calculated from a combination of GlycReSoft:peptide score, GlycReSoft:glycan score, and GlycReSoft:total score" [PSI:PI]
+is_a: MS:1002354 ! PSM-level q-value
+is_a: MS:1001143 ! PSM-level search engine specific statistic
+is_a: MS:XXX118  ! joint glycopeptide statistic
+
+
+[Term]
+name: GlycReSoft:glycan coverage
+id: MS:XXX10H
+def: "The degree of glycan sequence or composition coverage estimated by GlycReSoft" [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! PSM-level search engine specific statistic
+is_a: MS:1001153 ! search engine specific score
+is_a: MS:XXX103  ! glycopeptide glycan score
+relationship: has_order MS:1002108 ! higher score better
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
+
+
+[Term]
+name: GlycReSoft:mass shift
+id: MS:XXX10I
+def: "A mass shift applied to the glycopeptide when matching to the precursor ion mass that reflects an unlocalized modification or adduct" [PSI:PI]
+is_a: MS:1001405 ! spectrum identification result details
